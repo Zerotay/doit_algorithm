@@ -12,8 +12,8 @@ static int	isleap(int	year)
 
 static int dayofyear(int y, int m, int d)
 {
-	while (m--)
-		d += mdays[isleap(y)][m - 1];
+	while (m)
+		d += mdays[isleap(y)][m-- - 1];
 	return (d);
 }
 
