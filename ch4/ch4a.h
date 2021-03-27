@@ -1,5 +1,5 @@
-#ifndef CH4_H
-#define CH4_H
+#ifndef CH4A_H
+#define CH4A_H
 
 #include <stdlib.h>
 #include <stdio.h>
