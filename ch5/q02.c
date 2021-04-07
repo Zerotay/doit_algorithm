@@ -1,0 +1,29 @@
+#include "ch5.h"
+
+int gcd(int x, int y)
+{
+	int	ret;
+
+	if (x > y)
+		ret = y;
+	else
+		ret = x;
+	ret++;
+	while (--ret)
+		if (!(x % ret) && !(y % ret))
+			return ret;
+}
+
+int main(void)
+{
+	int x, y;
+	puts("두 정수의 최대공약수를 구합니다.");
+	printf("정수를 입력하세요 : ");
+	scanf("%d", &x);
+	printf("정수를 입력하세요 : ");
+	scanf("%d", &y);
+
+	printf("최대공약수는 %d입니다.\n", gcd(x, y));
+
+	return 0;
+}

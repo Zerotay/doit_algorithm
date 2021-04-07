@@ -1,0 +1,38 @@
+n = 4
+
+	하향식
+
+recur2(2); print 4; recur2(3);
+
+에서 recur2(2)는
+recur2(0); print 2; recur2(1);
+
+에서 2출력, 이후 recur2(1)에서
+recur2(-1), print 1; recur(0);
+
+에서 1출력, 이후 맨 위에서 4출력, 거기 recur2(3)에서
+recur2(1); print 3; recur2(2);
+
+에서 recur2(1)은
+recur2(-1); print 1; recur2(0);
+
+에서 1출력, 이후 상위에서 3출력, 이후  recur2(2)에서
+recur(0); print 2; recur(1);
+
+에서 2출력, recur(1)에서
+recur(-1); print 1; recur(0);
+
+에서 1출력.
+
+고로 2, 1, 4, 1, 3, 2, 1
+
+	상향식
+
+retur(-1) none
+recur(0) none
+recur(1) : recur(-1) ; print 1; recur(0) -- 1
+recur(2) : recur(0) ; print 2 ; recur(1) -- 2, 1
+recur(3) : recur(1) ; print 3 ; recur(2) -- 1, 3, 2, 1
+recur(4) : recur(2) ; print 4 ; recur(3) -- 2, 1, 4, 1, 3, 2, 1
+
+구하기로는 상향식이 쉬운데 로직을 따라가려면 하향식이 더 좋은 듯
